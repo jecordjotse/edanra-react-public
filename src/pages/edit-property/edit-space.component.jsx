@@ -42,6 +42,9 @@ const EditSpace = ({regions, districts, property, propertyEditStart, isPropertyE
         town: property.town,
         price: property.price,
         negotiation_status: property.negotiation_status,
+        no_of_bedrooms: property.no_of_bedrooms ? property.no_of_bedrooms : "",
+        ad_type: property.ad_type ? property.ad_type: "",
+        charge_rate: property.charge_rate ? property.charge_rate: ""
     });
 
     const [errorMessages, setErrorMessages] = useState({
@@ -55,7 +58,7 @@ const EditSpace = ({regions, districts, property, propertyEditStart, isPropertyE
         priceError: '',
     });
 
-    const {property_type,region, district, negotiation_status, ...otherPropertyDetails} = propertyDetails;
+    const {property_type,region, district, negotiation_status, charge_rate, no_of_bedrooms,...otherPropertyDetails} = propertyDetails;
 
     const setError = () => {
         let error = errorObject.error;
@@ -242,6 +245,9 @@ const EditSpace = ({regions, districts, property, propertyEditStart, isPropertyE
                                 </label>
                             </div>
 
+                            <FormInputText value={no_of_bedrooms} handleChange={handleChange} type='number' min="0" name='no_of_bedrooms' id='no_of_bedrooms'
+                                           label='Number of bedrooms'/>
+
 
                             <div className="form-group">
                                 <label htmlFor="description">Description</label>
@@ -284,9 +290,37 @@ const EditSpace = ({regions, districts, property, propertyEditStart, isPropertyE
                             />
                             <p className='red o-100'>{errorMessages.townError}</p>
 
-                            <FormInputText value={otherPropertyDetails.price} handleChange={handleChange} type='number'
-                                           name='price' id='price' label="Price per month"
-                            />
+
+                            <h5 className="custom-form-subhead">Charge Rate</h5>
+                            <div className="form-check form-check-radio">
+                                <label className="form-check-label">
+                                    <input onChange={handleChange} className="form-check-input" type="radio"
+                                           name="charge_rate" id="per-night"
+                                           value="per night" checked={charge_rate === 'per night'} />
+                                    Per night
+                                    <span className="circle">
+                                    <span className="check"/>
+                                </span>
+                                </label>
+                            </div>
+                            <div className="form-check form-check-radio">
+                                <label className="form-check-label">
+                                    <input onChange={handleChange} className="form-check-input" type="radio"
+                                           name="charge_rate"
+                                           id="per-month" value="per month"
+                                           checked={charge_rate === 'per month'} />
+                                    Per month
+                                    <span className="circle">
+                                    <span className="check"/>
+                                </span>
+                                </label>
+                            </div>
+
+
+
+                            <FormInputText value={otherPropertyDetails.price} handleChange={handleChange} type='number' name='price' id='price'
+                                           label={`Price ${!charge_rate ? '' : charge_rate === "per night" ? 'per night' : 'per month'} (GHS)`}
+                                           onBlur={validatePropertyPrice}/>
                             <p className='red o-100'>{errorMessages.priceError}</p>
 
                             <h5 className="custom-form-subhead">4. Negotiation status</h5>
