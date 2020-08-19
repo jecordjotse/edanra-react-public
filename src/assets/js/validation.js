@@ -622,7 +622,9 @@ export const provideSpaceValidate = event => {
 
 export const editSpaceValidate = event => {
     return validateName(undefined, event, 'name') && validateMail(undefined, event, 'email')
-        && validateContact(undefined, event, 'contact') && validateAddress(undefined, event, 'address')
+        && validateContact(undefined, event, 'contact') && validateAddress(undefined, event, 'address') &&
+        validateRadioButtons(event, 'property_type', 'propertyError')
+        && validateEmpty(undefined, event, 'no_of_bedrooms')
         && validateDescription(undefined, event, 'description')
         && validateRegion(event, 'region') && validateTown(undefined, event, 'town') &&
         validatePrice(undefined, event, 'price') &&
