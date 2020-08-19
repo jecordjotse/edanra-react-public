@@ -34,7 +34,7 @@ const SearchPage = ({
     price_max: 10000,
   });
 
-  const { property_type } = filters;
+  const { property_type, region, district } = filters;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -58,8 +58,6 @@ const SearchPage = ({
       price_max: event[1],
     });
   };
-
-  const { region, district } = filters;
 
   return (
     <>

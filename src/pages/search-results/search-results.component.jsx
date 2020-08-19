@@ -16,9 +16,6 @@ import FormInputSlider from "../../components/form-slider/form-slider.component"
 
 const SearchResultsPage = ({regions, districts, getResults, results, allProperties}) => {
 
-    useEffect(() => {
-    }, [results]);
-
     const [filters, setFilters] = useState({
         town: "",
         region: "",
@@ -28,6 +25,11 @@ const SearchResultsPage = ({regions, districts, getResults, results, allProperti
         price_min: 20,
         price_max: 10000,
     });
+
+    useEffect(() => {
+
+    }, [results, getResults]);
+
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -124,7 +126,7 @@ const SearchResultsPage = ({regions, districts, getResults, results, allProperti
                     <div className="form-row">
                         <div className="col-12 col-md-4 form-group">
                             <input onChange={handleChange} className="custom-search-inputs" id="town" type="number"
-                                   name="town"
+                                   name="no_of_bedrooms"
                                    placeholder="NUMBER OF BEDROOMS"
                                    style={{
                                        width: '100%',
@@ -141,11 +143,11 @@ const SearchResultsPage = ({regions, districts, getResults, results, allProperti
                                     style={{width: '100%', paddingBottom: '0px', marginTop: '5px', height: '60px'}}
                                     name="property_type">
                                 <option>PROPERTY TYPE</option>
-                                <option value='house'>House</option>
-                                <option value='hotel'>Hotel</option>
-                                <option value='guest'>Guest House</option>
-                                <option value='hostel'>Hostel</option>
-                                <option value='apartment'>Apartment</option>
+                                <option value='House'>House</option>
+                                <option value='Hotel'>Hotel</option>
+                                <option value='Guest House'>Guest House</option>
+                                <option value='Hostel'>Hostel</option>
+                                <option value='Apartment'>Apartment</option>
                             </select>
                         </div>
 
