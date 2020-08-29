@@ -293,7 +293,7 @@ const ProvideSpace = ({currentUser, propertyStorageUploadStart, regions, distric
                                     <input onChange={handleChange} className="form-check-input" type="radio"
                                            name="property_type" id="hostel"
                                            value="Hostel" checked={property_type === "Hostel"}
-                                           />
+                                           onClick={makePropertyValid}/>
                                     Hostel
                                     <span className="circle">
                                     <span className="check"/>
@@ -315,7 +315,7 @@ const ProvideSpace = ({currentUser, propertyStorageUploadStart, regions, distric
                             <p className='red o-100'>{errorMessages.propertyError}</p>
 
 
-                            <FormInputText handleChange={handleChange} type='number' min="0" name='no_of_bedrooms' id='no_of_bedrooms'
+                            <FormInputText handleChange={handleChange} type='number' min="1" name='no_of_bedrooms' id='no_of_bedrooms'
                                            label='Number of bedrooms'/>
                             <p className='red o-100'>{errorMessages.no_of_bedroomsError}</p>
 

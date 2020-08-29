@@ -11,7 +11,7 @@ import {
     errorObject,
     validateAddress,
     validateContact,
-    validateDescription,
+    validateDescription, validateEmpty,
     validateMail,
     validateName, validatePrice, validateTown
 } from "../../assets/js/validation";
@@ -42,6 +42,9 @@ const EditSpace = ({regions, districts, property, propertyEditStart, isPropertyE
         town: property.town,
         price: property.price,
         negotiation_status: property.negotiation_status,
+        no_of_bedrooms: property.no_of_bedrooms ? property.no_of_bedrooms : "",
+        ad_type: property.ad_type ? property.ad_type: "",
+        charge_rate: property.charge_rate ? property.charge_rate: ""
     });
 
     const [errorMessages, setErrorMessages] = useState({
@@ -50,12 +53,14 @@ const EditSpace = ({regions, districts, property, propertyEditStart, isPropertyE
         contactError: '',
         addressError: '',
         descriptionError: '',
+        propertyError: '',
+        no_of_bedroomsError: '',
         regionError: '',
         townError: '',
         priceError: '',
     });
 
-    const {property_type,region, district, negotiation_status, ...otherPropertyDetails} = propertyDetails;
+    const {property_type,region, district, negotiation_status, charge_rate, no_of_bedrooms,...otherPropertyDetails} = propertyDetails;
 
     const setError = () => {
         let error = errorObject.error;
@@ -82,12 +87,19 @@ const EditSpace = ({regions, districts, property, propertyEditStart, isPropertyE
         validateAddress(event);
         setError();
     };
+    const validateBedrooms = event => {
+        validateEmpty(event)
+        setError();
+    }
 
 
     const makeRegionValid = () => {
         setErrorMessages({...errorMessages, regionError: ''});
     };
 
+    const makePropertyValid = () => {
+        setErrorMessages({...errorMessages, propertyError: ''});
+    };
 
     const validatePropertyDescription = event => {
         validateDescription(event);
@@ -132,6 +144,8 @@ const EditSpace = ({regions, districts, property, propertyEditStart, isPropertyE
             validatePropertyContact(event);
         } else if (event.target.name === 'address') {
             validatePropertyAddress(event);
+        }else if (event.target.name === 'no_of_bedrooms'){
+            validateBedrooms(event);
         } else if (event.target.name === 'description') {
             validatePropertyDescription(event);
         } else if (event.target.name === 'town') {
@@ -190,7 +204,7 @@ const EditSpace = ({regions, districts, property, propertyEditStart, isPropertyE
                                 <label htmlFor="house" className="form-check-label">
                                     <input onChange={handleChange} className="form-check-input" type="radio"
                                            name="property_type" id="house"
-                                           value="House" checked={property_type === "House"}/>
+                                           value="House" checked={property_type === "House"} onClick={makePropertyValid}/>
                                     House
                                     <span className="circle">
                                     <span className="check"/>
@@ -201,7 +215,7 @@ const EditSpace = ({regions, districts, property, propertyEditStart, isPropertyE
                                 <label htmlFor="hotel" className="form-check-label">
                                     <input onChange={handleChange} className="form-check-input" type="radio"
                                            name="property_type" id="hotel"
-                                           value="Hotel" checked={property_type === "Hotel"}/>
+                                           value="Hotel" checked={property_type === "Hotel"} onClick={makePropertyValid}/>
                                     Hotel
                                     <span className="circle">
                                     <span className="check"/>
@@ -212,7 +226,7 @@ const EditSpace = ({regions, districts, property, propertyEditStart, isPropertyE
                                 <label htmlFor="guest-house" className="form-check-label">
                                     <input onChange={handleChange} className="form-check-input" type="radio"
                                            name="property_type" id="guest-house"
-                                           value="Guest House" checked={property_type === "Guest House"}/>
+                                           value="Guest House" checked={property_type === "Guest House"} onClick={makePropertyValid}/>
                                     Guest House
                                     <span className="circle">
                                     <span className="check"/>
@@ -223,7 +237,7 @@ const EditSpace = ({regions, districts, property, propertyEditStart, isPropertyE
                                 <label htmlFor="hostel" className="form-check-label">
                                     <input onChange={handleChange} className="form-check-input" type="radio"
                                            name="property_type" id="hostel"
-                                           value="Hostel" checked={property_type === "Hostel"}/>
+                                           value="Hostel" checked={property_type === "Hostel"} onClick={makePropertyValid}/>
                                     Hostel
                                     <span className="circle">
                                     <span className="check"/>
@@ -234,13 +248,20 @@ const EditSpace = ({regions, districts, property, propertyEditStart, isPropertyE
                                 <label htmlFor="apartment" className="form-check-label">
                                     <input onChange={handleChange} className="form-check-input" type="radio"
                                            name="property_type" id="apartment"
-                                           value="Apartment" checked={property_type === "Apartment"}/>
+                                           value="Apartment" checked={property_type === "Apartment"} onClick={makePropertyValid}/>
                                     Apartment
                                     <span className="circle">
                                     <span className="check"/>
                                 </span>
                                 </label>
                             </div>
+                            <p className='red o-100'>{errorMessages.propertyError}</p>
+
+
+                            <FormInputText value={no_of_bedrooms} handleChange={handleChange} type='number' min="1" name='no_of_bedrooms' id='no_of_bedrooms'
+                                           label='Number of bedrooms'/>
+                            <p className='red o-100'>{errorMessages.no_of_bedroomsError}</p>
+
 
 
                             <div className="form-group">
@@ -284,9 +305,37 @@ const EditSpace = ({regions, districts, property, propertyEditStart, isPropertyE
                             />
                             <p className='red o-100'>{errorMessages.townError}</p>
 
-                            <FormInputText value={otherPropertyDetails.price} handleChange={handleChange} type='number'
-                                           name='price' id='price' label="Price per month"
-                            />
+
+                            <h5 className="custom-form-subhead">Charge Rate</h5>
+                            <div className="form-check form-check-radio">
+                                <label className="form-check-label">
+                                    <input onChange={handleChange} className="form-check-input" type="radio"
+                                           name="charge_rate" id="per-night"
+                                           value="per night" checked={charge_rate === 'per night'} />
+                                    Per night
+                                    <span className="circle">
+                                    <span className="check"/>
+                                </span>
+                                </label>
+                            </div>
+                            <div className="form-check form-check-radio">
+                                <label className="form-check-label">
+                                    <input onChange={handleChange} className="form-check-input" type="radio"
+                                           name="charge_rate"
+                                           id="per-month" value="per month"
+                                           checked={charge_rate === 'per month'} />
+                                    Per month
+                                    <span className="circle">
+                                    <span className="check"/>
+                                </span>
+                                </label>
+                            </div>
+
+
+
+                            <FormInputText value={otherPropertyDetails.price} handleChange={handleChange} type='number' name='price' id='price'
+                                           label={`Price ${!charge_rate ? '' : charge_rate === "per night" ? 'per night' : 'per month'} (GHS)`}
+                                           onBlur={validatePropertyPrice}/>
                             <p className='red o-100'>{errorMessages.priceError}</p>
 
                             <h5 className="custom-form-subhead">4. Negotiation status</h5>
