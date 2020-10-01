@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/edanra-react-public/static/css/main.37c59144.chunk.css",
+    "main.js": "/edanra-react-public/static/js/main.ef58b18e.chunk.js",
+    "main.js.map": "/edanra-react-public/static/js/main.ef58b18e.chunk.js.map",
+    "runtime-main.js": "/edanra-react-public/static/js/runtime-main.1712cb76.js",
+    "runtime-main.js.map": "/edanra-react-public/static/js/runtime-main.1712cb76.js.map",
+    "static/css/2.ed590494.chunk.css": "/edanra-react-public/static/css/2.ed590494.chunk.css",
+    "static/js/2.265aafb7.chunk.js": "/edanra-react-public/static/js/2.265aafb7.chunk.js",
+    "static/js/2.265aafb7.chunk.js.map": "/edanra-react-public/static/js/2.265aafb7.chunk.js.map",
+    "index.html": "/edanra-react-public/index.html",
+    "precache-manifest.95441954c64dee52ccc3104beaba2bc8.js": "/edanra-react-public/precache-manifest.95441954c64dee52ccc3104beaba2bc8.js",
+    "service-worker.js": "/edanra-react-public/service-worker.js",
+    "static/css/2.ed590494.chunk.css.map": "/edanra-react-public/static/css/2.ed590494.chunk.css.map",
+    "static/css/main.37c59144.chunk.css.map": "/edanra-react-public/static/css/main.37c59144.chunk.css.map",
+    "static/js/2.265aafb7.chunk.js.LICENSE.txt": "/edanra-react-public/static/js/2.265aafb7.chunk.js.LICENSE.txt",
+    "static/media/african-american-woman-black-girl-black-woman-chair-1181414.jpg": "/edanra-react-public/static/media/african-american-woman-black-girl-black-woman-chair-1181414.2539b126.jpg",
+    "static/media/ready-to-earn.styles.scss": "/edanra-react-public/static/media/chair.33a9e5a4.jpg",
+    "static/media/edanra.png": "/edanra-react-public/static/media/edanra.e2e62dc5.png",
+    "static/media/hero.styles.scss": "/edanra-react-public/static/media/namnso-ukpanah-6UqJTfoXIq8-unsplash.bd07db93.jpg",
+    "static/media/contact.styles.scss": "/edanra-react-public/static/media/phone.03984e70.jpg",
+    "static/media/red-morley-hewitt-rl44UgsiObY-unsplash.jpg": "/edanra-react-public/static/media/red-morley-hewitt-rl44UgsiObY-unsplash.66ffd161.jpg",
+    "static/media/smartphone.png": "/edanra-react-public/static/media/smartphone.bf9fcc33.png",
+    "static/media/two-person-in-long-sleeved-shirt-shakehand-955395.jpg": "/edanra-react-public/static/media/two-person-in-long-sleeved-shirt-shakehand-955395.38f5457f.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1712cb76.js",
+    "static/css/2.ed590494.chunk.css",
+    "static/js/2.265aafb7.chunk.js",
+    "static/css/main.37c59144.chunk.css",
+    "static/js/main.ef58b18e.chunk.js"
+  ]
+}
