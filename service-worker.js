@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/edanra-react-public/precache-manifest.4a37cd2f369778b9a61dfa0bbd6f613a.js"
+  "/edanra-react-public/precache-manifest.09b9de27c4722fda7b3a20bbfa7f6a11.js"
 );
 
 self.addEventListener('message', (event) => {

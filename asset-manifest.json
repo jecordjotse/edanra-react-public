@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/edanra-react-public/static/css/main.37c59144.chunk.css",
-    "main.js": "/edanra-react-public/static/js/main.a6d7568e.chunk.js",
-    "main.js.map": "/edanra-react-public/static/js/main.a6d7568e.chunk.js.map",
+    "main.js": "/edanra-react-public/static/js/main.a6931c58.chunk.js",
+    "main.js.map": "/edanra-react-public/static/js/main.a6931c58.chunk.js.map",
     "runtime-main.js": "/edanra-react-public/static/js/runtime-main.1712cb76.js",
     "runtime-main.js.map": "/edanra-react-public/static/js/runtime-main.1712cb76.js.map",
     "static/css/2.ed590494.chunk.css": "/edanra-react-public/static/css/2.ed590494.chunk.css",
     "static/js/2.265aafb7.chunk.js": "/edanra-react-public/static/js/2.265aafb7.chunk.js",
     "static/js/2.265aafb7.chunk.js.map": "/edanra-react-public/static/js/2.265aafb7.chunk.js.map",
     "index.html": "/edanra-react-public/index.html",
-    "precache-manifest.4a37cd2f369778b9a61dfa0bbd6f613a.js": "/edanra-react-public/precache-manifest.4a37cd2f369778b9a61dfa0bbd6f613a.js",
+    "precache-manifest.09b9de27c4722fda7b3a20bbfa7f6a11.js": "/edanra-react-public/precache-manifest.09b9de27c4722fda7b3a20bbfa7f6a11.js",
     "service-worker.js": "/edanra-react-public/service-worker.js",
     "static/css/2.ed590494.chunk.css.map": "/edanra-react-public/static/css/2.ed590494.chunk.css.map",
     "static/css/main.37c59144.chunk.css.map": "/edanra-react-public/static/css/main.37c59144.chunk.css.map",
@@ -28,6 +28,6 @@
     "static/css/2.ed590494.chunk.css",
     "static/js/2.265aafb7.chunk.js",
     "static/css/main.37c59144.chunk.css",
-    "static/js/main.a6d7568e.chunk.js"
+    "static/js/main.a6931c58.chunk.js"
   ]
 }

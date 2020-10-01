@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6b45f9e506cb165598c1871d80da9e5b",
+    "revision": "01f408ba16abd553e508e7f6ed27ce70",
     "url": "/edanra-react-public/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/edanra-react-public/static/css/2.ed590494.chunk.css"
   },
   {
-    "revision": "bc9185a61762520e6197",
+    "revision": "0e3b632a114dee49e9cf",
     "url": "/edanra-react-public/static/css/main.37c59144.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/edanra-react-public/static/js/2.265aafb7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bc9185a61762520e6197",
-    "url": "/edanra-react-public/static/js/main.a6d7568e.chunk.js"
+    "revision": "0e3b632a114dee49e9cf",
+    "url": "/edanra-react-public/static/js/main.a6931c58.chunk.js"
   },
   {
     "revision": "221d4c9cb39f2357b79a",
