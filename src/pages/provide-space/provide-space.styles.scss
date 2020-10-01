@@ -17,6 +17,17 @@
   }
 }
 
+.selected:after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #004d40;
+  position: absolute;
+  margin-left: -12px;
+}
+
 .uploaded-images {
   h5 {
     font-weight: bold;
